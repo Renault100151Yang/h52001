@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data>
+    <num>6</num>
+    <bk>
+       <man name='张三' age='20'></man>
+       <women name='李四' age='30'></women>
+       <man name='张三' age='20'></man>
+    </bk>
+    <sh>
+       <man name='张三1' age='20'></man>
+       <women name='李四1' age='30'></women>
+       <man name='张三1' age='20'></man>
+    </sh>
+</data>

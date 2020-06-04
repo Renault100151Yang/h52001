@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- multiple多选，可以选择多个文件 -->
+   <!--  <form>  
+        <input type="file" multiple>
+        <button type="submit">提交</button>
+    </form> -->
+
+    <div class="col-sm-4 col-sm-offset-4 box">
+        <form
+          class="form-horizontal"
+          action="http://localhost:4010/signUp.php"
+          method="POST"
+        >
+          <div class="form-group">
+            <label for="user" class="col-sm-2 control-label">User</label>
+            <div class="col-sm-10">
+              <input
+                type="text"
+                class="form-control"
+                id="user"
+                name="user"
+                placeholder="User"
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="password" class="col-sm-2 control-label">Password</label>
+            <div class="col-sm-10">
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                name="password"
+                placeholder="Password"
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="name" class="col-sm-2 control-label">name</label>
+            <div class="col-sm-10">
+              <input
+                type="text"
+                class="form-control"
+                id="name"
+                name="name"
+                placeholder="name"
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="age" class="col-sm-2 control-label">age</label>
+            <div class="col-sm-10">
+              <input
+                type="text"
+                class="form-control"
+                id="age"
+                name="age"
+                placeholder="age"
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label">sex</label>
+            <div class="col-sm-10">
+              <div class="radio">
+                <label for="man">
+                  <input type="radio" name="sex" id="man" value="男" checked /> 男
+                </label>
+                <label for="women">
+                  <input type="radio" name="sex" id="women" value="女" /> 女
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="tel" class="col-sm-2 control-label">tel</label>
+            <div class="col-sm-10">
+              <input
+                type="text"
+                class="form-control"
+                id="tel"
+                name="tel"
+                placeholder="tel"
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email" class="col-sm-2 control-label">email</label>
+            <div class="col-sm-10">
+              <input
+                type="text"
+                class="form-control"
+                id="email"
+                name="email"
+                placeholder="email"
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-2">
+              <a class="btn btn-success" href="./signIn.html">Sign in</a>
+            </div>
+            <div class="col-sm-offset-4 col-sm-2">
+              <button type="submit" class="btn btn-default">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    <script>
+       /*  
+        发送JSON字符串
+       var obj={
+            user:"xietian",
+            age:30
+        }
+        var xhr=new XMLHttpRequest();
+        xhr.addEventListener("load",loadHandler);
+        xhr.open("POST","http://localhost:8000");
+        xhr.send(JSON.stringify(obj));
+
+        function loadHandler(e){
+           
+        } */
+
+
+        // ________可以上传Blob数据，比如图片文件等
+       /*  var form=document.querySelector("form");
+        form.addEventListener("submit",submitHandler);
+
+        function submitHandler(e){
+            e.preventDefault();
+            var file=document.querySelector("[type=file]");
+            console.log(file.files);
+            // 上传文件
+            var xhr=new XMLHttpRequest();
+            xhr.open("POST","http://localhost:8000");
+            xhr.addEventListener("load",loadHandler);
+            xhr.send(file.files[0]);
+            var xhr=new XMLHttpRequest();
+            xhr.open("POST","http://localhost:8000");
+            xhr.addEventListener("load",loadHandler);
+            xhr.send(file.files[1]);
+            var xhr=new XMLHttpRequest();
+            xhr.open("POST","http://localhost:8000");
+            xhr.addEventListener("load",loadHandler);
+            xhr.send(file.files[2]);
+        }
+
+        function loadHandler(e){
+            console.log(this.response);
+        } */
+
+
+        // -------直接发送document或者可以直接将HTML发送给服务器
+        // 也可以将DOMString发送给服务器
+        /* var x=new XMLHttpRequest();
+        x.addEventListener("load",xmlLoadHandler);
+        x.open("GET","./a.xml");
+        x.send();
+
+        function xmlLoadHandler(){
+            // console.log(x.responseXML)
+            var xhr=new XMLHttpRequest();
+            xhr.addEventListener("load",loadHandler);
+            xhr.open("POST","http://localhost:8000");
+            xhr.send(x.responseXML);
+
+        }
+
+        
+        function loadHandler(){
+            
+        } */
+
+
+
+        // ------formData 发送表单数据
+       /*  var form=document.querySelector("form");
+        form.addEventListener("submit",submitHandler);
+
+        function submitHandler(e){
+            e.preventDefault();
+            var fd=new FormData(form);
+            // for(var values of fd){
+            //     console.log(values);
+            // }
+            var xhr=new XMLHttpRequest();
+            xhr.addEventListener("load",loadHandler);
+            xhr.open("POST","http://localhost:8000");
+            // 将这个表单数据提交
+            xhr.send(fd);
+        }
+
+        function loadHandler(e){
+
+        } */
+
+
+
+        // _________________timeout  超时   因为各种因素导致数据前后端传递的延迟
+        // 设置超时等待，如果超过超过这个时间，就切断数据发送
+/* 
+        var xhr=new XMLHttpRequest();
+        xhr.open("POST","http://localhost:8000");
+        xhr.addEventListener("load",loadHandler);
+        // 超时事件，如果触发超时等待就会执行这个事件
+        xhr.addEventListener("timeout",timeOutHandler)
+        xhr.timeout=2000;//设置超时等待2秒
+        xhr.send("aaa");
+
+
+        function loadHandler(){
+
+        }
+
+        function timeOutHandler(e){
+            xhr.abort();//将原来的链接断掉
+            // 重新再创建并执行新的xhr的通信
+        }
+ */
+
+      
+        // __________readystate
+  // load事件以后再使用就是加载本地数据时使用
+       /*  var xhr=new XMLHttpRequest();
+        // 在整个AJAX的通信中属于全过程监听，当状态改变时，触发该函数
+        xhr.addEventListener("readystatechange",readyStateHandler);
+        xhr.open("POST","http://localhost:8000");
+        xhr.send("aaa");
+
+
+        function readyStateHandler(e){
+            console.log(this.readyState,this.status);
+            if(this.readyState===4 && this.status===200){
+                console.log(this.response);
+            }
+        } */
+
+
+        function ajax(data){
+            return new Promise(function(resolve,reject){
+                var xhr=new XMLHttpRequest();
+                xhr.onreadystatechange=function(){
+                    if(xhr.readyState===4){
+                        if(xhr.status===200){
+                            resolve(xhr.response);
+                        }else{
+                            reject(xhr.status);
+                        }
+                    }
+                }
+                xhr.onerror=function(){
+                    reject(xhr.status);
+                }
+                xhr.open("POST","http://localhost:8000");
+                xhr.send(JSON.stringify(data));
+            })
+        }
+
+
+        ajax({name:"xietian",age:30}).then(function(res){
+            console.log(res);
+        }).catch(function(err){
+            console.log(err);
+        })
+    </script>
+</body>
+</html>
